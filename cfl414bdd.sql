@@ -175,3 +175,11 @@ CREATE TABLE tb_calles (
 
 INSERT INTO alus_curs (id_alus, id_curs) VALUES ((SELECT id_alus FROM tb_alus WHERE dni=123456),(SELECT id_curs FROM tb_curs WHERE nom_curs='maquillaje'));
 UPDATE tb_curs SET inscriptos=? WHERE nom_curs=?;
+
+SELECT tb_alus.apyn AS apyn, 
+       tb_curs.nom_curs AS nom_curs
+FROM alus_curs 
+    JOIN tb_curs
+        ON alus_curs.id_curs= tb_curs.id_curs
+    JOIN tb_alus
+        ON alus_curs.id_alus= tb_alus.id_alus;

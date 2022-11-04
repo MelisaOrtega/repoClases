@@ -15,7 +15,8 @@
         <ul>
             <%
                 Class.forName("com.mysql.jdbc.Driver");
-                String insert = "INSERT INTO tb_curs(nom_curs, desc_curs, inscriptos) VALUES (?,?,0)";
+                String insert = "INSERT INTO tb_curs(nom_curs, desc_curs, inscriptos) "
+                                + "VALUES (?,?,0)";
                 String select = "select * from tb_curs";
                 Connection conexion = null;
                 PreparedStatement consultaPreparada = null;
